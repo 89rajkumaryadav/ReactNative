@@ -31,3 +31,8 @@ export default () => {
 
   return [searchApi, results, errorMessage];
 };
+
+
+export const useRaj = () => {
+  console.log("Hi Rajnet Yadav")
+}
