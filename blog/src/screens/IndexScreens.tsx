@@ -3,11 +3,11 @@ import React, {useContext} from 'react'
 import { Context } from '../context/BlogContext'
 
 const IndexScreens = () => {
-  const {state, addBlogPosts} = useContext(Context)
+  const {state, addBlogPost} = useContext(Context)
   //console.log(value)
   return (
     <>
-    <Button title='Add Posts' onPress={addBlogPosts}/>
+    <Button title='Add Posts' onPress={addBlogPost}/>
       <FlatList
       data={state}
       keyExtractor={(item) => item.title}
