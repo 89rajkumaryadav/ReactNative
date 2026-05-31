@@ -6,7 +6,7 @@ const ShowScreen = ({route}) => {
   const { state } = useContext(Context)
   const blogPost = state.find(
     blogPost => blogPost.id === route.params.id
-  );
+  )
    
   return (
     <View>

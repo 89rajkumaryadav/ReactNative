@@ -1,11 +1,25 @@
 import { StyleSheet, Text, View, FlatList, Button, TouchableOpacity } from 'react-native'
-import React, {useContext} from 'react'
+import React, {useContext, useLayoutEffect} from 'react'
 import {Feather} from '@expo/vector-icons'
 import { Context } from '../context/BlogContext'
 
 const IndexScreens = ({navigation}) => {
   const {state, addBlogPost, deleteBlogPost} = useContext(Context)
-  //console.log(value)
+  
+    useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+          onPress={() => navigation.navigate('CreateScreen')}
+          style={{ marginRight: 15 }}
+        >
+          <Feather name="plus" size={28} />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
+
   return (
     <>
     <Button title='Add Posts' onPress={addBlogPost}/>
@@ -30,6 +44,8 @@ const blogRow = (item,deleteBlogPost, navigation) => {
     </TouchableOpacity>
   )
 }
+
+
 
 export default IndexScreens
 
