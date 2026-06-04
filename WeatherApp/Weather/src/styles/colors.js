@@ -1,6 +1,7 @@
 export default {
     bottamTabsColor: '#0B131D',
     white: '#ffffff',
-    textGreyB: '#808080'
+    textGreyB: '#808080',
+    backgroundAppColor: '#0B131D'
     
 }

@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import AuthStack from './AuthStack'
 import MainStack from './MainStack'
 const Routes = () => {
-    const isToken = true
+    const isToken = false
   return (
     <NavigationContainer>
         {isToken ? <MainStack/> : <AuthStack/> }
