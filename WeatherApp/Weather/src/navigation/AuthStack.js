@@ -4,12 +4,13 @@ import { createStaticNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Welcome from '../screens/Welcome/Welcome'
+import { HeaderShownContext } from '@react-navigation/elements';
 
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
   return (
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown:false}}>
         <Stack.Screen name="Welcome" component={Welcome} />
       </Stack.Navigator>
   )
