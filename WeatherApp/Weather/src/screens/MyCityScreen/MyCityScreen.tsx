@@ -1,14 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import WrapperContainer from '../../components/WrapperContainer'
+
 
 const MyCityScreen = () => {
   return (
-    <View>
+    <WrapperContainer>
       <Text>MyCityScreen</Text>
-    </View>
+    </WrapperContainer>
   )
 }
 
 export default MyCityScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  mainStyle:{
+    flex: 1,
+  }
+})

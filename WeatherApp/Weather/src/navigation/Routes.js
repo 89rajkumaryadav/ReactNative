@@ -4,9 +4,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import AuthStack from './AuthStack'
 import MainStack from './MainStack'
 const Routes = () => {
-    const isToken = false
+    const isToken = true
   return (
-    <NavigationContainer>
+    <NavigationContainer >
         {isToken ? <MainStack/> : <AuthStack/> }
     </NavigationContainer>
   )
@@ -14,4 +14,4 @@ const Routes = () => {
 
 export default Routes
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({}) 

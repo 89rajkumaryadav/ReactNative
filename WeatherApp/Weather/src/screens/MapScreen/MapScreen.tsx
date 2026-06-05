@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import WrapperContainer from '../../components/WrapperContainer'
 
 const MapScreen = () => {
   return (
-    <View>
+    <WrapperContainer>
       <Text>MapScreen</Text>
-    </View>
+    </WrapperContainer>
   )
 }
 

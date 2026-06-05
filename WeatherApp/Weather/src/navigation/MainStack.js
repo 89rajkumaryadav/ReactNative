@@ -13,7 +13,7 @@ const MainStack = () => {
   return ( 
     
    
-         <Stack.Navigator>
+         <Stack.Navigator screenOptions={{headerShown:false}}>
            <Stack.Screen name="BottamTabs" component={BottamTabs} />
            <Stack.Screen name="SearchScreen" component={SearchScreen} />
            <Stack.Screen name="DetailsScreen" component={DetailsScreen} />

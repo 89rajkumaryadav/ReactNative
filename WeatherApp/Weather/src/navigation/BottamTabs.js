@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 
 const BottamTabs = () => {
   return (
-   <Tab.Navigator screenOptions={{tabBarStyle:{backgroundColor:colors.bottamTabsColor}}}>
+   <Tab.Navigator screenOptions={{ headerShown: false, tabBarStyle:{backgroundColor:colors.bottamTabsColor}}}>
       <Tab.Screen name="Home" 
       options={{tabBarLabel:"",
         tabBarIcon:({focused}) =>(
