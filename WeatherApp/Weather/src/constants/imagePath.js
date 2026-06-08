@@ -14,5 +14,6 @@ export default {
     cloudy:require('../assets/images/cloudy.png'),
     cloud:require('../assets/images/cloud.png'),
     sun:require('../assets/images/sun.png'),
+    back:require('../assets/images/back.png'),
    
 }

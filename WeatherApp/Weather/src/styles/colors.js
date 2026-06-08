@@ -6,4 +6,5 @@ export default {
     cardBackgroundColor: '#1F2C3B',
     txtLightGrey: '#D3D3D3',
     whiteSmoke: '#F5F5F5',
+    blue:'#43438d',
 }
