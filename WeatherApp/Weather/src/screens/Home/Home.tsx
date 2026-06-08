@@ -54,7 +54,7 @@ const Home = () => {
           <Text style={styles.chanceTxt}>Chance of the rain: 0%</Text>
           <Image source={imagePath.sun} style={styles.centerImage} />
           <Text style={{ ...styles.titleStyle, marginTop: moderateScale(32) }}>
-            31 °{' '}
+            31 °
           </Text>
         </View>
         <View
