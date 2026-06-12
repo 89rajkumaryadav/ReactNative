@@ -6,6 +6,8 @@ import {
 
 import Routes from './navigation/Routes'
 
+
+
 function App() { 
   const isDarkMode = useColorScheme() === 'dark';
 
