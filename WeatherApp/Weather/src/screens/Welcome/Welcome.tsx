@@ -18,13 +18,23 @@ import {
 } from 'react-native-core-responsive-screen';
 import colors from '../../styles/colors';
 import fontFamily from '../../constants/fontFamily';
-import { storage } from '../../untils/storage';
+import { LocalStorage } from '../../untils/LocalStorage';
+import { useDispatch } from 'react-redux';
+import { saveUsersData } from '../../redux/reducers/authSlice';
 const { width, height } = Dimensions.get('window');
 
 const Welcome = () => {
+  const dispatch = useDispatch();
+
   const saveToken = () => {
-    storage.set('token', '123456789');
-    Alert.alert('Save Token');
+    // LocalStorage.set('token', '123456789');
+    // Alert.alert('Save Token');
+    dispatch(
+      saveUsersData({
+        userData: { name: 'Raj', Gender: 'Male', Country: 'India' },
+        isLogin: true,
+      }),
+    );
   };
   return (
     <WrapperContainer>

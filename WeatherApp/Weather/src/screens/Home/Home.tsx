@@ -7,7 +7,7 @@ import {
   FlatList,
   Pressable,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import WrapperContainer from '../../components/WrapperContainer';
 import fontFamily from '../../constants/fontFamily';
 import { scale, moderateScale } from 'react-native-core-responsive-screen';
@@ -18,11 +18,16 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MainStackParamList } from '../../navigation/MainStack';
 import { AirDataItem } from '../../constants/ObjectTypes';
+import axios from 'axios';
+import { Current_Weather_Api } from '../../config/urls';
 
 type NavigationProp = NativeStackNavigationProp<MainStackParamList>;
 
 const Home = () => {
   const navigation = useNavigation<NavigationProp>();
+  const [currentLatLong, setCurrentLatLong] = useState('26.072067,83.185654');
+  const [currentWeatherData, setCurrentWeatherData] =
+    useState<CurrentWeatherData | null>(null);
   const weekWeather = [
     { day: 'Monday', weather: 'Sunny', temperature: '31/19' },
     { day: 'Tuesday', weather: 'Cloudy', temperature: '31/19' },
@@ -46,11 +51,31 @@ const Home = () => {
     { id: 5, weather: 'Raining', image: imagePath.rain, temp: 30 },
   ];
 
+  const callTheCurrentWeatherApi = async () => {
+    try {
+      const res = await axios
+        .get(Current_Weather_Api(currentLatLong))
+        .then(res => {
+          //console.log(res, 'CurrentWeather: ');
+          setCurrentWeatherData(res.data);
+        });
+    } catch (error) {
+      console.log(error, 'CurrentWeatherAPI: ');
+    }
+  };
+
+  console.log(currentWeatherData, 'CurrentLocData');
+  useEffect(() => {
+    callTheCurrentWeatherApi();
+  }, []);
   return (
     <WrapperContainer>
       <ScrollView style={{ flex: 1 }}>
         <View style={styles.mainStyle}>
-          <Text style={styles.titleStyle}> Madrid</Text>
+          <Text style={styles.titleStyle}>
+            {' '}
+            {currentWeatherData?.location?.name}
+          </Text>
           <Text style={styles.chanceTxt}>Chance of the rain: 0%</Text>
           <Image source={imagePath.sun} style={styles.centerImage} />
           <Text style={{ ...styles.titleStyle, marginTop: moderateScale(32) }}>

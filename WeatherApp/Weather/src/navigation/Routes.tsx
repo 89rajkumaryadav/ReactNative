@@ -3,8 +3,14 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthStack from './AuthStack';
 import MainStack from './MainStack';
+import { useSelector } from 'react-redux';
+//
+//
+//
 const Routes = () => {
-  const isToken = false;
+  const userData = useSelector(state => state.auth);
+  //console.log(userData?.isLogin, 'userData');
+  const isToken = userData?.isLogin;
   return (
     <NavigationContainer>
       {isToken ? <MainStack /> : <AuthStack />}
