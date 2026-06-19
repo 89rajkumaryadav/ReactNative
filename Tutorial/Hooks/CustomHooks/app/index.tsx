@@ -3,7 +3,12 @@ import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
   const router = useRouter();
-  const arrData = ["custom Hooks", "useState Hooks", "useEffect Hooks"];
+  const arrData = [
+    "custom Hooks",
+    "useState Hooks",
+    "useEffect Hooks",
+    "useRef Hooks",
+  ];
   return (
     <View
       style={{
@@ -27,6 +32,8 @@ export default function Index() {
                       router.push({ pathname: "/ViewUseState" });
                     } else if (item == "useEffect Hooks") {
                       router.push({ pathname: "/ViewUseEffect" });
+                    } else if (item == "useRef Hooks") {
+                      router.push({ pathname: "/viewUseRef" });
                     }
                   }}
                 >
